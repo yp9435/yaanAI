@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# YaanAI - Interactive Learning Platform 🐘
+
+YaanAI is an innovative learning platform that transforms PDF documents into interactive learning experiences through games, videos, and mind maps.
+
+## Features
+
+- **PDF Processing**: Upload and analyze PDF documents
+- **Interactive Games**:
+  - Crossword Puzzles: Generated from PDF content
+  - Hangman: Words extracted from uploaded documents
+  - Mind Map: Create visual connections between concepts
+- **Video Learning**: Automatically fetches relevant educational videos
+- **Real-time Chat Interface**: Get instant assistance and explanations
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v18 or higher)
+- npm or yarn
+- A modern web browser
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/yaanAI.git
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Install dependencies:
+   ```bash
+   cd yaanAI
+   npm install
+   ```
 
-## Learn More
+3. Set up environment variables:
+   Create a `.env.local` file in the root directory and add:
+   ```env
+   NEXT_PUBLIC_HUGGINGFACE_API_KEY = your_api_key_here
+   NEXT_PUBLIC_YOUTUBE_API_KEY = your_api_key_here
+   NEXT_PUBLIC_GEMINI_API_KEY = your_api_key_here
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Component Details
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### FileUpload Component
+- Handles PDF file uploads
+- Extracts text content
+- Detects topics for video recommendations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Crossword Component
+- Generates crossword puzzles from PDF content
+- Interactive puzzle interface
+- Provides hints and answers
+
+### Hangman Component
+- Extracts keywords from PDF
+- Classic hangman game implementation
+- Educational word guessing
+
+### MindMap Component
+- Create nodes with custom text
+- Drag and drop interface
+- Visual learning tool
+
+### Video Component
+- Fetches relevant educational videos
+- Uses YouTube Data API
+- Topic-based video recommendations
+
+## Tech Stack
+
+- **Frontend Framework**: Next.js 14
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **PDF Processing**: PDF.js
+- **AI Integration**: gemini, Hugging Face API
+- **Video Integration**: YouTube Data API
+
+## Development Guidelines
+
+### Code Style
+- Use TypeScript for type safety
+- Follow React best practices
+- Implement responsive design
+- Use client components when necessary
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
