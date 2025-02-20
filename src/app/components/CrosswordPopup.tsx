@@ -63,8 +63,10 @@ const CrosswordPopup: React.FC<CrosswordProps> = ({ pdfFile, onClose }) => {
   const generateCrosswordFromText = async (text: string) => {
     try {
       const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-      const prompt = `Extract 10 key terms and their definitions from this text: "${text.substring(0, 1000)}".
-        Format as JSON with 'words' and 'clues' arrays. Words should be 3-10 letters long, unique, and well-spaced. dont repeat words. be sensible when choosing the words.`;
+      const prompt = `Extract 10 key terms and their definitions from this text: "${text}". 
+  Format as JSON with 'words' and 'clues' arrays. 
+  Words should be 3-10 letters . 
+  Don't repeat words which is already selected by you, and ensure they are meaningful.`;
 
       const result = await model.generateContent(prompt);
       const response = await result.response;
